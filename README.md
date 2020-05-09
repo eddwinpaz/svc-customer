@@ -1,5 +1,3 @@
-[![coverage report](https://gitlab.com/muble/services/customer/badges/master/coverage.svg)](https://gitlab.com/muble/services/customer/-/commits/master) [![pipeline status](https://gitlab.com/muble/services/customer/badges/master/pipeline.svg)](https://gitlab.com/muble/services/customer/-/commits/master)
-
 # Instructions
 
 To be able to see what commands you can use on this customer service follow this command:
@@ -49,9 +47,9 @@ Ensure dependency packages are installed
 
 ```
   MYSQL_ROOT_PASSWORD=root
-  MYSQL_USER=muble
-  MYSQL_PASSWORD=muble
-  MYSQL_DATABASE=muble
+  MYSQL_USER=root
+  MYSQL_PASSWORD=root
+  MYSQL_DATABASE=root
   MYSQL_HOST="127.0.0.1"
   MYSQL_PORT=3306
 ```
@@ -104,32 +102,16 @@ Now to check newly created docker containers run the following command:
 docker ps
 ```
 
-#### Build Image from Dockerfile
-
-To be able to generate a new docker image follow this commands:
-
-```
-docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-```
-
-```
-docker build -t registry.gitlab.com/muble/services/customer:${CI_COMMIT_SHA:0:8} .
-```
-
-```
-docker push registry.gitlab.com/muble/services/customer:${CI_COMMIT_SHA:0:8}
-```
-
 #### Redis Service
 
 ```
-docker run --name redis-muble -p 6379:6379 -d redis
+docker run --name redis-svc -p 6379:6379 -d redis
 ```
 
 #### Redis Web UI
 
 ```
-docker run --rm -ti -p 5001:5001 --link redis-muble:redis-muble marian/rebrow
+docker run --rm -ti -p 5001:5001 --link redis-svc:redis-root marian/rebrow
 ```
 
 #### Distribute Git Hooks Between Teams.
@@ -141,9 +123,3 @@ However, what you can do to get around this particular challenge is to create a 
 ```
 git config core.hooksPath .githooks
 ```
-
-#### Access Container Registry
-
-Once you have executed this particular command, you should now see that whenever you try and commit something, the hooks provided within that directory are now enabled!
-
-Follow this link to download the latests docker image registry. [here](https://gitlab.com/muble/services/customer/container_registry)
