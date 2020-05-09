@@ -1,13 +1,13 @@
 package main
 
 import (
-	"customer/customer/delivery/web"
 	"customer/customer/repository"
 	"customer/customer/usecase"
 	"customer/logging"
 	"net"
 	"net/http"
 	"os"
+	"svc-customer/customerdelivery/web"
 
 	// _ "net/http/pprof"
 

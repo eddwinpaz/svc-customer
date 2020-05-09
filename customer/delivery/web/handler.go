@@ -2,9 +2,9 @@ package web
 
 import (
 	"customer/customer/entity"
-	"customer/customer/usecase"
 	"encoding/json"
 	"net/http"
+	"owner/owner/usecase"
 	"strconv"
 
 	"github.com/gorilla/mux"

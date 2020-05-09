@@ -2,12 +2,12 @@ package web
 
 import (
 	"customer/customer/entity"
-	mocks "customer/customer/mocks"
 	"customer/customer/usecase"
 	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"strings"
+	mocks "svc-customer/customermocks"
 	"testing"
 
 	"github.com/gorilla/mux"

@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"customer/customer/entity"
-	"customer/customer/mocks"
+	"owner/owner/mocks"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

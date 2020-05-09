@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"customer/customer/entity"
-	"customer/customer/repository"
+	"owner/owner/repository"
 )
 
 // CustomerDTO Data Transfer Object structure for entity
