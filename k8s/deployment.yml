@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: customer-service
+  name: customer-service
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      run: customer-service
+  template:
+    metadata:
+      labels:
+        run: customer-service
+    spec:
+      containers:
+      - image: registry.gitlab.com/customer-svc:6a8973b4
+        name: customer-service
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9000
+          protocol: TCP
+        env:
+          - name: MYSQL_USER
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secrets
+                key: MYSQL_USER
+          - name: MYSQL_PASS
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secrets
+                key: MYSQL_PASS
+          - name: MYSQL_DB
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secrets
+                key: MYSQL_DB
+          - name: MYSQL_HOST
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secrets
+                key: MYSQL_HOST
+          - name: MYSQL_PORT
+            valueFrom:
+              secretKeyRef:
+                 name: mysql-secrets
+                 key: MYSQL_PORT          
+      imagePullSecrets:
+        - name: gitlab-registry

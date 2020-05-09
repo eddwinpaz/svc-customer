@@ -1,0 +1,8 @@
+/vendor
+.DS_Store
+vendor.log
+.env
+customers.psql
+.testCoverage.txt
+coverage.txt
+/bin

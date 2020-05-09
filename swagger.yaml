@@ -1,0 +1,209 @@
+basePath: /
+consumes:
+- application/json
+definitions:
+  Swagger:
+    properties:
+      country:
+        type: string
+        x-go-name: Country
+      dni:
+        type: string
+        x-go-name: Dni
+      dni_type:
+        type: string
+        x-go-name: DniType
+      email:
+        type: string
+        x-go-name: Email
+      last_name:
+        type: string
+        x-go-name: LastName
+      name:
+        type: string
+        x-go-name: Name
+      phone:
+        type: string
+        x-go-name: Phone
+    type: object
+    x-go-package: customer/docs
+host: api.muble.app
+info:
+  contact:
+    email: api@muble.app
+    name: muble maintainers
+  description: |-
+    This is a simple todo list API
+    illustrating go-swagger codegen
+    capabilities.
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  termsOfService: |-
+    There are actually none.
+    This is for demonstration purpose only.
+    Schemes:
+    http
+    https
+  title: Muble Customer's API
+  version: 0.1.0
+paths:
+  /customer:
+    get:
+      description: Get all registered customer's in a list
+      operationId: Fetch
+      responses:
+        "200":
+          $ref: '#/responses/swaggerResponseArray'
+        "404":
+          $ref: '#/responses/swaggerResponseFail'
+  /customer/:
+    post:
+      description: Store new Customer's information
+      operationId: Store
+      parameters:
+      - in: query
+        name: name
+        type: string
+        x-go-name: Name
+      - in: query
+        name: last_name
+        type: string
+        x-go-name: LastName
+      - in: query
+        name: dni
+        type: string
+        x-go-name: Dni
+      - in: query
+        name: dni_type
+        type: string
+        x-go-name: DniType
+      - in: query
+        name: phone
+        type: string
+        x-go-name: Phone
+      - in: query
+        name: country
+        type: string
+        x-go-name: Country
+      - in: query
+        name: email
+        type: string
+        x-go-name: Email
+      - in: query
+        name: password
+        type: string
+        x-go-name: Password
+      responses:
+        "200":
+          $ref: '#/responses/swaggerResponseFail'
+        "404":
+          $ref: '#/responses/swaggerResponseFail'
+  /customer/{uuid}:
+    delete:
+      description: Delete all Customer's data
+      operationId: DeleteByUUID
+      responses:
+        "200":
+          $ref: '#/responses/swaggerResponseFail'
+        "404":
+          $ref: '#/responses/swaggerResponseFail'
+    get:
+      description: Get customer's information by passing a valid customer UUID
+      operationId: GetByUUID
+      responses:
+        "200":
+          $ref: '#/responses/swaggerResponse'
+        "404":
+          $ref: '#/responses/swaggerResponseFail'
+    put:
+      description: Update existing Customer's Information by passing a valid customer
+        UUID
+      operationId: UpdateByUUID
+      parameters:
+      - in: query
+        name: name
+        type: string
+        x-go-name: Name
+      - in: query
+        name: last_name
+        type: string
+        x-go-name: LastName
+      - in: query
+        name: dni
+        type: string
+        x-go-name: Dni
+      - in: query
+        name: dni_type
+        type: string
+        x-go-name: DniType
+      - in: query
+        name: phone
+        type: string
+        x-go-name: Phone
+      - in: query
+        name: country
+        type: string
+        x-go-name: Country
+      - in: query
+        name: email
+        type: string
+        x-go-name: Email
+      responses:
+        "200":
+          $ref: '#/responses/swaggerResponseFail'
+        "404":
+          $ref: '#/responses/swaggerResponseFail'
+  /customer/healthcheck/:
+    get:
+      description: Get customer's api status
+      operationId: HealthCheck
+      responses:
+        "200":
+          $ref: '#/responses/swaggerResponse'
+        "404":
+          $ref: '#/responses/swaggerResponse'
+produces:
+- application/json
+responses:
+  swaggerResponse:
+    schema:
+      properties:
+        data:
+          $ref: '#/definitions/Swagger'
+        description:
+          type: string
+          x-go-name: Description
+        status:
+          type: boolean
+          x-go-name: Status
+      type: object
+  swaggerResponseArray:
+    schema:
+      properties:
+        data:
+          items:
+            $ref: '#/definitions/Swagger'
+          type: array
+          x-go-name: Data
+        description:
+          type: string
+          x-go-name: Description
+        status:
+          type: boolean
+          x-go-name: Status
+      type: object
+  swaggerResponseFail:
+    schema:
+      properties:
+        data:
+          type: object
+          x-go-name: Data
+        description:
+          type: string
+          x-go-name: Description
+        status:
+          type: boolean
+          x-go-name: Status
+      type: object
+swagger: "2.0"
