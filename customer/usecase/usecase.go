@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"customer/customer/entity"
 	"owner/owner/repository"
+	"svc-customer/customer/entity"
 )
 
 // CustomerDTO Data Transfer Object structure for entity

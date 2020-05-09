@@ -1,12 +1,12 @@
 package web
 
 import (
-	"customer/customer/entity"
-	"customer/customer/usecase"
 	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"strings"
+	"svc-customer/customer/entity"
+	"svc-customer/customer/usecase"
 	mocks "svc-customer/customermocks"
 	"testing"
 

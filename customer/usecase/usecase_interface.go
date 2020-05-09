@@ -1,6 +1,6 @@
 package usecase
 
-import "customer/customer/entity"
+import "svc-customer/customer/entity"
 
 // Usecase interface
 type Usecase interface {

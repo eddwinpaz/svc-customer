@@ -1,9 +1,9 @@
 package repository_test
 
 import (
-	"customer/customer/entity"
-	"customer/customer/mocks"
-	"customer/customer/repository"
+	"svc-customer/customer/entity"
+	"svc-customer/customer/mocks"
+	"svc-customer/customer/repository"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

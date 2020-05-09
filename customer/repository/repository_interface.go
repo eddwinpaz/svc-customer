@@ -1,6 +1,6 @@
 package repository
 
-import "customer/customer/entity"
+import "svc-customer/customer/entity"
 
 // Repository interface to repository
 type Repository interface {

@@ -1,6 +1,6 @@
 package mocks
 
-import "customer/customer/entity"
+import "svc-customer/customer/entity"
 
 // MockCustomer is a customer entity model with pointers
 var MockCustomer = &entity.Customer{

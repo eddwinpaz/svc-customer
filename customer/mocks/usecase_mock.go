@@ -1,7 +1,7 @@
 package mocks
 
 import (
-	"customer/customer/entity"
+	"svc-customer/customer/entity"
 
 	"github.com/stretchr/testify/mock"
 )

@@ -1,6 +1,6 @@
 package mocks
 
-import "customer/customer/entity"
+import "svc-customer/customer/entity"
 
 // MockQuerySelectByUUID Test Repository SQL Mocks to select valid customer
 var MockQuerySelectByUUID = "SELECT name, last_name, dni, dni_type, email, phone, customer_uuid, country FROM customers WHERE customer_uuid = \\? AND deleted_at IS NULL LIMIT 1"

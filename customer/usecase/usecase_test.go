@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"customer/customer/entity"
 	"owner/owner/mocks"
+	"svc-customer/customer/entity"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

@@ -1,10 +1,10 @@
 package repository
 
 import (
-	"customer/customer/entity"
 	"database/sql"
 	"fmt"
 	"os"
+	"svc-customer/customer/entity"
 
 	_ "github.com/go-sql-driver/mysql" // MySQL driver for repository
 	"github.com/google/uuid"

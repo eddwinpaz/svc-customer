@@ -1,11 +1,11 @@
 package web
 
 import (
-	"customer/customer/entity"
 	"encoding/json"
 	"net/http"
 	"owner/owner/usecase"
 	"strconv"
+	"svc-customer/customer/entity"
 
 	"github.com/gorilla/mux"
 )
